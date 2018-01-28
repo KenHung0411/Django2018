@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block header %}
+	<h1> Post Page </h1>
+	<hr width="1250" align="left" size="4"/>
+{% endblock %}
+
+
+
+{% block content %}
+
+	{% for post in posts %}
+		<div>
+			<h1> <a href="{% url 'post_detail' pk=post.pk  %}">{{post.title}}</a></h1>
+		</div>
+		<hr width="500" align="left" size="4"/>
+	{% endfor %}
+
+{% endblock %}
+
+
+{% block footer %}
+	<hr width="1250" align="left" size="4"/>
+	<p><h2> {{date}} </h2></p>
+{% endblock %}
