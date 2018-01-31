@@ -19,6 +19,15 @@
 
 
 {% block footer %}
+	<div class = "start-page-link">
+		<hr width="500" align="left" size="4">
+		<a href="{% url 'index' %}"> <h3> << Home Page </h3></a>
+	</div>
+	
+	<div class="post_comment">
+		<a href="{% url 'add_comment' pk=post.id %}"> <h4>Post a comment >> </h4>	
+	</div>
+	
 	<div class="date">
 		<hr width="500" align="left" size="4">
 			<h4> {{ date }}</h4> </a>

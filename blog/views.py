@@ -41,13 +41,13 @@ def post_detail(request, pk):
 
 
 def post_comment(request, pk):
-	comments = Comments.objects.filter(post_id = pk)
+	comments = Comment.objects.filter(post_id = pk)
 	p_id = pk
 	content = {
 		'comments' : comments,
 		'p_id': p_id 
 	}
-	return render(request, 'blog/comment.html', content)
+	return render(request, 'blog/comment_detail.html', content)
 
 
 def add_comment(request,pk):
@@ -64,4 +64,4 @@ def add_comment(request,pk):
 			pass
 	else:
 		form = CommentForm()
-		return render(request, 'blog/add_cpmment.html', {'form':form})
+		return render(request, 'blog/add_comment.html', {'form':form})
