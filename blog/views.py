@@ -28,9 +28,11 @@ def post_list(request):
 
 
 def post_detail(request, pk):
-	post = get_objects_or_404(Post, pk=pk)
+	now = datetime.now()
+	post = get_object_or_404(Posts, pk=pk)
 	c_number = len(Comment.objects.filter(post_id = pk))
 	content = {
+		'date': now.strftime('%Y-%m-%d'),
 		'post':post,
 		'c_number':c_number
 	}
