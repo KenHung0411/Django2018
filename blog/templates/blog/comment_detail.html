@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+
+{% block header %}
+	<h2> Comments: </h2>
+	<hr width="500" align="left" size="4">
+{% endblock %}
+
+{% block content %}
+    {% if comments_count == 0 %}
+		<h1> No one have left comment yet...</h1>
+	{% endif %}
+	<div class='comment'>
+	{% for comment in comments %}
+		
+		<h4>{{comment.name}} :  </h4>
+		<h4>{{comment.comment}} </h4>
+		<hr width="500" align="left" size="4">
+	{% endfor %}
+	</div>
+{% endblock %}
+
+{% block footer %}
+	<h4> << Back to the Post list page </h4>
+
+{% endblock %}
+

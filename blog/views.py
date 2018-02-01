@@ -42,9 +42,11 @@ def post_detail(request, pk):
 
 def post_comment(request, pk):
 	comments = Comment.objects.filter(post_id = pk)
+	comments_count = len(comments)
 	p_id = pk
 	content = {
 		'comments' : comments,
+		'comments_count': comments_count,
 		'p_id': p_id 
 	}
 	return render(request, 'blog/comment_detail.html', content)
